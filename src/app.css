@@ -1,0 +1,23 @@
+:root {
+  --income-color: #4caf50;
+  --expense-color: #f44336;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  gap: 1em;
+  align-items: center;
+  padding: 1em;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 20px;
+}

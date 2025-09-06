@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 1em;
-  height: 50px;
 }
 
 #page-title {
