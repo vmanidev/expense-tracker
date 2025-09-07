@@ -31,6 +31,7 @@ export default function AddTransaction({
             id="title"
             placeholder="Ex. Shopping"
             name="title"
+            required
           />
         </div>
         <div id="amount-field-wrapper">
@@ -42,32 +43,35 @@ export default function AddTransaction({
             <input
               type="number"
               id="amount"
-              placeholder="Ex. (&#8377;) 1000"
+              placeholder="Ex. &#8377;1000"
               name="amount"
+              required
             />
           </div>
         </div>
         <div id="type-field-wrapper">
           <label htmlFor="type">Type</label>
-          <select id="type" placeholder="Income/Expense" name="type">
+          <select id="type" name="type" required>
+            <option value="" selected disabled>
+              Income/Expense
+            </option>
             <option value="income">Income</option>
             <option value="expense">Expense</option>
           </select>
         </div>
         <div id="category-field-wrapper">
           <label htmlFor="category">Category</label>
-          <select
-            id="category"
-            placeholder="Ex.Food, Groceries, etc."
-            name="category"
-          >
+          <select id="category" name="category" required>
+            <option value="" selected disabled>
+              Ex. Food, Groceries, etc.
+            </option>
             <option>Food</option>
             <option>Groceries</option>
           </select>
         </div>
         <div id="date-field-wrapper">
           <label htmlFor="amount">Date</label>
-          <input type="date" id="date" name="date" />
+          <input type="date" id="date" name="date" required />
         </div>
       </form>
       <div className="dialog-footer">
