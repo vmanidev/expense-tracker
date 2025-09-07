@@ -30,6 +30,19 @@ form > div {
   gap: 5px;
 }
 
+form label {
+  font-size: 12px;
+}
+
+form input {
+  padding: 0.5em;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  color: gray;
+  width: 20em;
+}
+
 .add-btn {
   background: black;
   color: white;
