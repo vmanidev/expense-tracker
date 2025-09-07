@@ -43,6 +43,6 @@
 #income > span:last-child,
 #expenses > span:last-child,
 #balance > span:last-child {
-  font-size: 24px;
+  font-size: 1.7em;
   font-weight: 700;
 }
