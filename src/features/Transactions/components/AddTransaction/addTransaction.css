@@ -54,3 +54,15 @@ form input {
   background: white;
   border: 1px solid black;
 }
+
+@media (max-width: 700px) {
+  form {
+    margin: 1em auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  form input {
+    width: 20em;
+  }
+}
