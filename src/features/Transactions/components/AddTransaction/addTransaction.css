@@ -34,13 +34,32 @@ form label {
   font-size: 12px;
 }
 
-form input {
+form input,
+form select {
   padding: 0.5em;
   border: none;
   border-bottom: 1px solid gray;
   outline: none;
   color: gray;
   width: 20em;
+}
+
+form select {
+  width: 21em;
+}
+
+#amount-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+#amount-input-wrapper span {
+  position: absolute;
+  font-size: 1em;
+}
+
+#amount-input-wrapper input {
+  text-indent: 1em;
 }
 
 .add-btn {
@@ -52,7 +71,7 @@ form input {
 .cancel-btn {
   color: black;
   background: white;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 @media (max-width: 700px) {
@@ -60,9 +79,5 @@ form input {
     margin: 1em auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
-  }
-
-  form input {
-    width: 20em;
   }
 }

@@ -1,52 +1,128 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./addTransaction.css";
 
-export default function AddTransaction({
-  openAddTransactionDialog,
-  setOpenAddTransactionDialog,
-}) {
+import { useExpense } from "../../../../contexts/ExpenseContext";
+
+export default function AddTransactionDialog() {
   const dialogRef = useRef(null);
+
+  const { openDialog, expenses, setOpenDialog, addExpense } = useExpense();
+
+  const [formData, setFormData] = useState({
+    title: "",
+    amount: "",
+    type: "",
+    category: "",
+    date: "",
+  });
 
   useEffect(
     () =>
-      openAddTransactionDialog
-        ? dialogRef.current.showModal()
-        : dialogRef.current.close(),
-    [openAddTransactionDialog]
+      openDialog ? dialogRef.current.showModal() : dialogRef.current.close(),
+    [openDialog]
   );
 
   const closeDialog = () => {
-    setOpenAddTransactionDialog(false);
+    setOpenDialog(false);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    addExpense(formData);
+    setOpenDialog(false);
+    setFormData({ title: "", amount: "", type: "", category: "", date: "" });
+  };
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
     <dialog id="add-transaction-dialog" ref={dialogRef}>
       <h3>Add Transaction</h3>
-      <form>
+      <form id="addExpenseForm" onSubmit={handleFormSubmit}>
         <div id="title-field-wrapper">
           <label htmlFor="title">Title</label>
-          <input id="title" placeholder="Title" name="title" />
+          <input
+            type="text"
+            id="title"
+            placeholder="Ex. Shopping"
+            name="title"
+            value={formData.title}
+            onChange={handleFormChange}
+            required
+          />
         </div>
         <div id="amount-field-wrapper">
-          <label htmlFor="amount">Amount (&#8377;)</label>
-          <input id="amount" placeholder="Amount (&#8377;)" name="amount" />
+          <label htmlFor="amount">Amount</label>
+          <div id="amount-input-wrapper">
+            <span className="material-icons material-symbols-outlined">
+              currency_rupee
+            </span>
+            <input
+              type="number"
+              id="amount"
+              placeholder="Ex. &#8377;1000"
+              name="amount"
+              value={formData.amount}
+              onChange={handleFormChange}
+              required
+            />
+          </div>
         </div>
         <div id="type-field-wrapper">
           <label htmlFor="type">Type</label>
-          <input id="type" placeholder="Type" name="type" />
+          <select
+            id="type"
+            name="type"
+            value={formData.type}
+            onChange={handleFormChange}
+            required
+          >
+            <option value="" disabled>
+              Income/Expense
+            </option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
         </div>
         <div id="category-field-wrapper">
           <label htmlFor="category">Category</label>
-          <input id="category" placeholder="Category" name="category" />
+          <select
+            id="category"
+            name="category"
+            value={formData.category}
+            onChange={handleFormChange}
+            required
+          >
+            <option value="" disabled>
+              Ex. Food, Groceries, etc.
+            </option>
+            <option value="food">Food</option>
+            <option value="groceries">Groceries</option>
+          </select>
         </div>
         <div id="date-field-wrapper">
-          <label htmlFor="amount">Date (&#8377;)</label>
-          <input id="date" placeholder="Date" name="date" />
+          <label htmlFor="amount">Date</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleFormChange}
+            required
+          />
         </div>
       </form>
       <div className="dialog-footer">
-        <button className="add-btn">Add</button>
+        <button className="add-btn" type="submit" form="addExpenseForm">
+          Add
+        </button>
         <button className="cancel-btn" onClick={closeDialog}>
           Cancel
         </button>
