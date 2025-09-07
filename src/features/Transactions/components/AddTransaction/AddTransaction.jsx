@@ -25,23 +25,23 @@ export default function AddTransaction({
       <h3>Add Transaction</h3>
       <form>
         <div id="title-field-wrapper">
-          <label for="title">Title</label>
+          <label htmlFor="title">Title</label>
           <input id="title" placeholder="Title" name="title" />
         </div>
         <div id="amount-field-wrapper">
-          <label for="amount">Amount (&#8377;)</label>
+          <label htmlFor="amount">Amount (&#8377;)</label>
           <input id="amount" placeholder="Amount (&#8377;)" name="amount" />
         </div>
         <div id="type-field-wrapper">
-          <label for="type">Type</label>
+          <label htmlFor="type">Type</label>
           <input id="type" placeholder="Type" name="type" />
         </div>
         <div id="category-field-wrapper">
-          <label for="category">Category</label>
+          <label htmlFor="category">Category</label>
           <input id="category" placeholder="Category" name="category" />
         </div>
         <div id="date-field-wrapper">
-          <label for="amount">Date (&#8377;)</label>
+          <label htmlFor="amount">Date (&#8377;)</label>
           <input id="date" placeholder="Date" name="date" />
         </div>
       </form>
