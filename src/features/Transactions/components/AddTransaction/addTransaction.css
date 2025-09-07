@@ -71,7 +71,7 @@ form select {
 .cancel-btn {
   color: black;
   background: white;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 @media (max-width: 700px) {

@@ -1,29 +1,51 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./addTransaction.css";
 
-export default function AddTransaction({
-  openAddTransactionDialog,
-  setOpenAddTransactionDialog,
-}) {
+import { useExpense } from "../../../../contexts/ExpenseContext";
+
+export default function AddTransactionDialog() {
   const dialogRef = useRef(null);
+
+  const { openDialog, expenses, setOpenDialog, addExpense } = useExpense();
+
+  const [formData, setFormData] = useState({
+    title: "",
+    amount: "",
+    type: "",
+    category: "",
+    date: "",
+  });
 
   useEffect(
     () =>
-      openAddTransactionDialog
-        ? dialogRef.current.showModal()
-        : dialogRef.current.close(),
-    [openAddTransactionDialog]
+      openDialog ? dialogRef.current.showModal() : dialogRef.current.close(),
+    [openDialog]
   );
 
   const closeDialog = () => {
-    setOpenAddTransactionDialog(false);
+    setOpenDialog(false);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    addExpense(formData);
+    setOpenDialog(false);
+    setFormData({ title: "", amount: "", type: "", category: "", date: "" });
+  };
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
     <dialog id="add-transaction-dialog" ref={dialogRef}>
       <h3>Add Transaction</h3>
-      <form>
+      <form id="addExpenseForm" onSubmit={handleFormSubmit}>
         <div id="title-field-wrapper">
           <label htmlFor="title">Title</label>
           <input
@@ -31,6 +53,8 @@ export default function AddTransaction({
             id="title"
             placeholder="Ex. Shopping"
             name="title"
+            value={formData.title}
+            onChange={handleFormChange}
             required
           />
         </div>
@@ -45,14 +69,22 @@ export default function AddTransaction({
               id="amount"
               placeholder="Ex. &#8377;1000"
               name="amount"
+              value={formData.amount}
+              onChange={handleFormChange}
               required
             />
           </div>
         </div>
         <div id="type-field-wrapper">
           <label htmlFor="type">Type</label>
-          <select id="type" name="type" required>
-            <option value="" selected disabled>
+          <select
+            id="type"
+            name="type"
+            value={formData.type}
+            onChange={handleFormChange}
+            required
+          >
+            <option value="" disabled>
               Income/Expense
             </option>
             <option value="income">Income</option>
@@ -61,21 +93,36 @@ export default function AddTransaction({
         </div>
         <div id="category-field-wrapper">
           <label htmlFor="category">Category</label>
-          <select id="category" name="category" required>
-            <option value="" selected disabled>
+          <select
+            id="category"
+            name="category"
+            value={formData.category}
+            onChange={handleFormChange}
+            required
+          >
+            <option value="" disabled>
               Ex. Food, Groceries, etc.
             </option>
-            <option>Food</option>
-            <option>Groceries</option>
+            <option value="food">Food</option>
+            <option value="groceries">Groceries</option>
           </select>
         </div>
         <div id="date-field-wrapper">
           <label htmlFor="amount">Date</label>
-          <input type="date" id="date" name="date" required />
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleFormChange}
+            required
+          />
         </div>
       </form>
       <div className="dialog-footer">
-        <button className="add-btn">Add</button>
+        <button className="add-btn" type="submit" form="addExpenseForm">
+          Add
+        </button>
         <button className="cancel-btn" onClick={closeDialog}>
           Cancel
         </button>
