@@ -17,6 +17,19 @@ dialog {
   cursor: pointer;
 }
 
+form {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .add-btn {
   background: black;
   color: white;
