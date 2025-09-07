@@ -1,0 +1,30 @@
+dialog {
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-footer {
+  display: flex;
+  gap: 1em;
+  justify-content: end;
+}
+
+.dialog-footer > button {
+  min-width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: black;
+  color: white;
+  border: none;
+}
+
+.cancel-btn {
+  color: black;
+  background: white;
+  border: 1px solid black;
+}
