@@ -34,7 +34,8 @@ form label {
   font-size: 12px;
 }
 
-form input {
+form input,
+form select {
   padding: 0.5em;
   border: none;
   border-bottom: 1px solid gray;
@@ -62,7 +63,8 @@ form input {
     grid-template-rows: repeat(5, 1fr);
   }
 
-  form input {
+  form input,
+  form select {
     width: 20em;
   }
 }
