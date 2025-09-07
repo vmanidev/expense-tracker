@@ -1,6 +1,6 @@
 import React from "react";
-import Summary from "./components/Summary";
-import TransactionList from "../Transactions/components/TransactionList";
+import Summary from "./components/Summary/Summary";
+import TransactionList from "../Transactions/components/TransactionList/TransactionList";
 
 export default function Dashboard() {
   return (
