@@ -22,27 +22,14 @@
 
 #summary-main-container > div {
   display: flex;
-  gap: 1em;
   flex-direction: column;
 }
 
-#income {
-  color: var(--income-color);
-  font-size: 12px;
+:is(#income, #expenses, #balance) > span:first-child {
+  font-size: 0.5em;
 }
 
-#expenses {
-  color: var(--expense-color);
-  font-size: 12px;
-}
-
-#balance {
-  font-size: 12px;
-}
-
-#income > span:last-child,
-#expenses > span:last-child,
-#balance > span:last-child {
-  font-size: 1.7em;
+:is(#income, #expenses, #balance) > span:last-child {
+  font-size: 1em;
   font-weight: 700;
 }

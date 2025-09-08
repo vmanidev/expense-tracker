@@ -34,7 +34,7 @@ export default function TransactionList() {
             <span>{title}</span>
           </span>
           <span className="icon-text">
-            <span class="material-icons material-symbols-outlined">
+            <span className="material-icons material-symbols-outlined">
               currency_rupee
             </span>
             <span>{amount}</span>

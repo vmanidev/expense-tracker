@@ -18,18 +18,18 @@ export default function Summary() {
       </div>
       <div id="summary-main-container">
         <div id="income">
-          <span>Income</span>
+          <span className="income">Income</span>
           <span className="icon-text">
-            <span class="material-icons material-symbols-outlined">
+            <span className="material-icons material-symbols-outlined">
               currency_rupee
             </span>
             <span>{totalIncome}</span>
           </span>
         </div>
         <div id="expenses">
-          <span>Expenses</span>
+          <span className="expense">Expenses</span>
           <span className="icon-text">
-            <span class="material-icons material-symbols-outlined">
+            <span className="material-icons material-symbols-outlined">
               currency_rupee
             </span>
             <span>{totalExpenses}</span>
@@ -38,7 +38,7 @@ export default function Summary() {
         <div id="balance">
           <span>Balance</span>
           <span className="icon-text">
-            <span class="material-icons material-symbols-outlined">
+            <span className="material-icons material-symbols-outlined">
               currency_rupee
             </span>
             <span>{balance}</span>
