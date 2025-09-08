@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 
 const ExpenseContext = createContext();
 
@@ -13,9 +13,38 @@ const ExpenseProvider = ({ children }) => {
     ]);
   };
 
+  const totalIncome = useMemo(
+    () =>
+      expenses
+        .filter(({ type }) => type === "income")
+        .reduce((acc, { amount }) => acc + amount, 0),
+    [expenses]
+  );
+
+  const totalExpenses = useMemo(
+    () =>
+      expenses
+        .filter(({ type }) => type === "expense")
+        .reduce((acc, { amount }) => acc + amount, 0),
+    [expenses]
+  );
+
+  const balance = useMemo(
+    () => totalIncome - totalExpenses,
+    [totalIncome, totalExpenses]
+  );
+
   return (
     <ExpenseContext.Provider
-      value={{ expenses, addExpense, openDialog, setOpenDialog }}
+      value={{
+        expenses,
+        addExpense,
+        totalIncome,
+        totalExpenses,
+        balance,
+        openDialog,
+        setOpenDialog,
+      }}
     >
       {children}
     </ExpenseContext.Provider>
