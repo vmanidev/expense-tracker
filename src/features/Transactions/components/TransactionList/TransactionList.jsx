@@ -23,7 +23,7 @@ export default function TransactionList() {
     return expenseList.map(({ id, title, amount, type, category, date }) => {
       return (
         <li key={id}>
-          <span id="expense-title">
+          <span className="icon-text">
             <span
               className={`${
                 type === "income" ? "income" : "expense"
@@ -33,7 +33,12 @@ export default function TransactionList() {
             </span>
             <span>{title}</span>
           </span>
-          <span>&#8377;{amount}</span>
+          <span className="icon-text">
+            <span class="material-icons material-symbols-outlined">
+              currency_rupee
+            </span>
+            <span>{amount}</span>
+          </span>
           <span>{type}</span>
           <span>{category}</span>
           <span>{date}</span>

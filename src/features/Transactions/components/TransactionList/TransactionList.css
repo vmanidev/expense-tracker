@@ -21,16 +21,6 @@
   padding-bottom: 1em;
 }
 
-#expense-title {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-#expense-title .material-icons {
-  font-size: 1em;
-}
-
 #action-button-container {
   display: flex;
   flex-direction: row;
