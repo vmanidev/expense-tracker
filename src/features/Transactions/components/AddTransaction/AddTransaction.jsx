@@ -38,7 +38,7 @@ export default function AddTransactionDialog() {
     const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "amount" ? Number(value) : value, //convert amount string to number value
     }));
   };
 

@@ -1,8 +1,11 @@
 import React from "react";
 
 import "./summary.css";
+import { useExpense } from "../../../../contexts/ExpenseContext";
 
 export default function Summary() {
+  const { totalIncome, totalExpenses, balance } = useExpense();
+
   return (
     <div>
       <div id="summary-header">
@@ -16,15 +19,15 @@ export default function Summary() {
       <div id="summary-main-container">
         <div id="income">
           <span>Income</span>
-          <span>Rs. 15,000</span>
+          <span>&#8377; {totalIncome}</span>
         </div>
         <div id="expenses">
           <span>Expenses</span>
-          <span>Rs. 10,000</span>
+          <span>&#8377; {totalExpenses}</span>
         </div>
         <div id="balance">
           <span>Balance</span>
-          <span>Rs. 5,000</span>
+          <span>&#8377; {balance}</span>
         </div>
       </div>
     </div>
