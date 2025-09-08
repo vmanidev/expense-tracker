@@ -6,6 +6,31 @@
   margin: 1em auto;
 }
 
+#transactionList-main-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 0 0 1em;
+}
+
+#transactionList-main-container ul li {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #9e9e9e3b;
+  padding-bottom: 1em;
+}
+
+#expense-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#expense-title .material-icons {
+  font-size: 1em;
+}
+
 #action-button-container {
   display: flex;
   flex-direction: row;
