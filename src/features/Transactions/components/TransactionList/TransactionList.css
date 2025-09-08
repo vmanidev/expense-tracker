@@ -17,9 +17,11 @@
 
 #transactionList-main-container ul li {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   border-bottom: 1px solid #9e9e9e3b;
   padding-bottom: 1em;
+  align-items: center;
+  justify-items: center;
 }
 
 #action-button-container {
