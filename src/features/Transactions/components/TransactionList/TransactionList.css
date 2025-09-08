@@ -4,6 +4,22 @@
   border-radius: 12px;
   padding: 1em;
   margin: 1em auto;
+  font-size: 0.5em;
+}
+
+#transactionList-main-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 0 0 1em;
+}
+
+#transactionList-main-container ul li {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #9e9e9e3b;
+  padding-bottom: 1em;
 }
 
 #action-button-container {

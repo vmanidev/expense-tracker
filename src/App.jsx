@@ -3,6 +3,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 import Dashboard from "./features/Dashboard/Dashboard";
 
 import "./app.css";
+import "./responsive.css";
 
 import ExpenseProvider from "./contexts/ExpenseContext";
 

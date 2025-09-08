@@ -21,3 +21,20 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+
+.income {
+  color: var(--income-color);
+}
+
+.expense {
+  color: var(--expense-color);
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text .material-icons {
+  font-size: 1em;
+}

@@ -1,0 +1,10 @@
+@media (min-width: 768px) {
+  #add-transaction-dialog form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  #transactionList-main-container {
+    font-size: 1em;
+  }
+}
