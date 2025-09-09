@@ -42,7 +42,10 @@ export default function TransactionList() {
           <span>{type}</span>
           <span>{category}</span>
           <span>{date}</span>
-          <span className="material-icons material-symbols-outlined">
+          <span
+            id="delete-icon"
+            className="material-icons material-symbols-outlined"
+          >
             delete_forever
           </span>
         </li>
