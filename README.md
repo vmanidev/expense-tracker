@@ -1,3 +1,7 @@
+# Expense Manager
+
+The Expense Tracker App is a simple React application that helps users manage their personal finances. Users can quickly add income and expense transactions, view their balance, and track their spending habits.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
