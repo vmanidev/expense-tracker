@@ -39,9 +39,13 @@
   outline: none;
   cursor: pointer;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
-  width: 70px;
+  width: fit-content;
+}
+
+#add-btn span.material-icons {
+  font-size: 1em;
 }
 
 #delete-icon {
