@@ -43,3 +43,9 @@
   padding: 5px;
   width: 70px;
 }
+
+#delete-icon {
+  font-size: 1.5em;
+  color: var(--expense-color);
+  cursor: pointer;
+}
