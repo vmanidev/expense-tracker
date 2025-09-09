@@ -38,3 +38,7 @@ body {
 .icon-text .material-icons {
   font-size: 1em;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
