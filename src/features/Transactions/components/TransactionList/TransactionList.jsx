@@ -31,7 +31,7 @@ export default function TransactionList() {
             >
               {type === "income" ? "call_made" : "call_received"}
             </span>
-            <span>{title}</span>
+            <span className="capitalize">{title}</span>
           </span>
           <span className="icon-text">
             <span className="material-icons material-symbols-outlined">
@@ -39,8 +39,12 @@ export default function TransactionList() {
             </span>
             <span>{amount}</span>
           </span>
-          <span>{type}</span>
-          <span>{category}</span>
+          <span
+            className={`capitalize ${type === "income" ? "income" : "expense"}`}
+          >
+            {type}
+          </span>
+          <span className="capitalize">{category}</span>
           <span>{date}</span>
           <span
             id="delete-icon"
