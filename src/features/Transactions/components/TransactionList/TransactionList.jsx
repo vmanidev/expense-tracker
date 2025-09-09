@@ -4,6 +4,8 @@ import "./TransactionList.css";
 import AddTransactionDialog from "../AddTransaction/AddTransaction";
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
+import { formatDate } from "../../../../utils/formatDate";
+
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenDialog } = useExpense();
 
@@ -45,7 +47,7 @@ export default function TransactionList() {
             {type}
           </span>
           <span className="capitalize">{category}</span>
-          <span>{date}</span>
+          <span>{formatDate(date)}</span>
           <span
             id="delete-icon"
             className="material-icons material-symbols-outlined"
