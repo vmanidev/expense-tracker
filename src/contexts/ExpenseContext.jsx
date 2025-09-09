@@ -13,6 +13,10 @@ const ExpenseProvider = ({ children }) => {
     ]);
   };
 
+  const removeExpense = (id) => {
+    setExpense((prev) => prev.filter((expense) => expense.id !== id));
+  };
+
   const totalIncome = useMemo(
     () =>
       expenses
@@ -39,6 +43,7 @@ const ExpenseProvider = ({ children }) => {
       value={{
         expenses,
         addExpense,
+        removeExpense,
         totalIncome,
         totalExpenses,
         balance,

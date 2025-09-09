@@ -5,7 +5,7 @@ import AddTransactionDialog from "../AddTransaction/AddTransaction";
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
 export default function TransactionList() {
-  const { expenses, setOpenDialog } = useExpense();
+  const { expenses, removeExpense, setOpenDialog } = useExpense();
 
   const TransactionListHeader = () => {
     return (
@@ -45,6 +45,7 @@ export default function TransactionList() {
           <span
             id="delete-icon"
             className="material-icons material-symbols-outlined"
+            onClick={(e) => removeExpense(id)}
           >
             delete_forever
           </span>
