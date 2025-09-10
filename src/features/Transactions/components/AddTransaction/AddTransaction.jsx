@@ -38,6 +38,12 @@ export default function AddTransactionDialog() {
   const resetForm = () =>
     setFormData({ title: "", amount: "", type: "", category: "", date: "" });
 
+  const maxDateSelection = () => {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 1); //exclude present date and disable future dates only
+    return maxDate.toISOString().split("T")[0];
+  };
+
   const handleFormChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({
@@ -119,6 +125,7 @@ export default function AddTransactionDialog() {
             name="date"
             value={formData.date}
             onChange={handleFormChange}
+            max={maxDateSelection()}
             required
           />
         </div>
