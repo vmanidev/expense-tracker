@@ -6,6 +6,7 @@ import { useExpense } from "../../../../contexts/ExpenseContext";
 
 import { sortByDate, transformDate } from "../../../../utils/date";
 import { formatCurrency } from "../../../../utils/currency";
+import { CATEGORY_MAP } from "../../../../constants/category";
 
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenDialog } = useExpense();
@@ -46,7 +47,7 @@ export default function TransactionList() {
             >
               {type}
             </span>
-            <span className="capitalize">{category}</span>
+            <span>{CATEGORY_MAP[category]}</span>
             <span
               id="delete-icon"
               className="material-icons material-symbols-outlined"

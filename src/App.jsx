@@ -6,14 +6,17 @@ import "./app.css";
 import "./responsive.css";
 
 import ExpenseProvider from "./contexts/ExpenseContext";
+import CategoryContextProvider from "./contexts/CategoryContext";
 
 export default function App() {
   return (
     <ExpenseProvider>
-      <div id="app">
-        <PageHeader></PageHeader>
-        <Dashboard />
-      </div>
+      <CategoryContextProvider>
+        <div id="app">
+          <PageHeader></PageHeader>
+          <Dashboard />
+        </div>
+      </CategoryContextProvider>
     </ExpenseProvider>
   );
 }

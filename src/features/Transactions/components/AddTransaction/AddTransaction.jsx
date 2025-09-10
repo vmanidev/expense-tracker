@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./addTransaction.css";
 
 import { useExpense } from "../../../../contexts/ExpenseContext";
+import { useCategory } from "../../../../contexts/CategoryContext";
 
 export default function AddTransactionDialog() {
   const dialogRef = useRef(null);
@@ -12,10 +13,12 @@ export default function AddTransactionDialog() {
   const [formData, setFormData] = useState({
     title: "",
     amount: "",
-    type: "",
+    type: "expense",
     category: "",
     date: "",
   });
+
+  const { categories, setCategories } = useCategory();
 
   useEffect(
     () =>
@@ -36,7 +39,13 @@ export default function AddTransactionDialog() {
   };
 
   const resetForm = () =>
-    setFormData({ title: "", amount: "", type: "", category: "", date: "" });
+    setFormData({
+      title: "",
+      amount: "",
+      type: "expense",
+      category: "",
+      date: "",
+    });
 
   const maxDateSelection = () => {
     const maxDate = new Date();
@@ -50,6 +59,27 @@ export default function AddTransactionDialog() {
       ...prev,
       [name]: name === "amount" ? Number(value) : value, //convert amount string to number value
     }));
+  };
+
+  const getCategories = (type) => categories[type];
+
+  const renderCategories = (type) => {
+    return (
+      <>
+        <option value="" disabled>
+          {type === "income"
+            ? "Ex. Salary, Bonus, etc."
+            : "Ex. Food, Groceries, etc."}
+        </option>
+        {getCategories(type).map(({ text, value }) => {
+          return (
+            <option key={value} value={value}>
+              {text}
+            </option>
+          );
+        })}
+      </>
+    );
   };
 
   return (
@@ -111,11 +141,7 @@ export default function AddTransactionDialog() {
             onChange={handleFormChange}
             required
           >
-            <option value="" disabled>
-              Ex. Food, Groceries, etc.
-            </option>
-            <option value="food">Food</option>
-            <option value="groceries">Groceries</option>
+            {renderCategories(formData.type)}
           </select>
         </div>
         <div id="date-field-wrapper">
