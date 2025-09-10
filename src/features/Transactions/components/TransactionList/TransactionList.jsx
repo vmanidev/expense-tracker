@@ -5,6 +5,7 @@ import AddTransactionDialog from "../AddTransaction/AddTransaction";
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
 import { sortByDate, transformDate } from "../../../../utils/date";
+import { formatCurrency } from "../../../../utils/currency";
 
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenDialog } = useExpense();
@@ -41,7 +42,7 @@ export default function TransactionList() {
               <span className="material-icons material-symbols-outlined">
                 currency_rupee
               </span>
-              <span>{amount}</span>
+              <span>{formatCurrency(amount)}</span>
             </span>
             <span
               className={`capitalize ${
