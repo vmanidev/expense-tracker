@@ -5,6 +5,7 @@
   padding: 1em;
   margin: 1em auto;
   font-size: 0.5em;
+  overflow: scroll;
 }
 
 #transactionList-main-container ul {
