@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./TransactionList.css";
 import AddTransactionDialog from "../AddTransaction/AddTransaction";
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
-import { formatDate } from "../../../../utils/formatDate";
-import { sortByDate } from "../../../../utils/sortByDate";
+import { formatDate } from "../../../../utils/date";
+import { sortByDate } from "../../../../utils/date";
 
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenDialog } = useExpense();
