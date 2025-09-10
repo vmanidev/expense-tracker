@@ -49,20 +49,6 @@ form select {
   width: 21em;
 }
 
-#amount-input-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-#amount-input-wrapper span {
-  position: absolute;
-  font-size: 1em;
-}
-
-#amount-input-wrapper input {
-  text-indent: 1em;
-}
-
 .add-btn {
   background: black;
   color: white;

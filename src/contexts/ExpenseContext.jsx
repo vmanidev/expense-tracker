@@ -9,7 +9,14 @@ const ExpenseProvider = ({ children }) => {
   const addExpense = ({ title, amount, type, category, date }) => {
     setExpense((prev) => [
       ...prev,
-      { id: prev.length + 1, title, amount, type, category, date },
+      {
+        id: prev.length + 1,
+        title,
+        amount: amount.toFixed(2),
+        type,
+        category,
+        date,
+      },
     ]);
   };
 

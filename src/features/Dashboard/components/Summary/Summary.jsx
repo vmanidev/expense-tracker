@@ -2,6 +2,7 @@ import React from "react";
 
 import "./summary.css";
 import { useExpense } from "../../../../contexts/ExpenseContext";
+import { formatCurrency } from "../../../../utils/currency";
 
 export default function Summary() {
   const { totalIncome, totalExpenses, balance } = useExpense();
@@ -19,30 +20,15 @@ export default function Summary() {
       <div id="summary-main-container">
         <div id="income">
           <span className="income">Income</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{totalIncome}</span>
-          </span>
+          <span>{formatCurrency(totalIncome)}</span>
         </div>
         <div id="expenses">
           <span className="expense">Expenses</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{totalExpenses}</span>
-          </span>
+          <span>{formatCurrency(totalExpenses)}</span>
         </div>
         <div id="balance">
           <span>Balance</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{balance}</span>
-          </span>
+          <span>{formatCurrency(balance)}</span>
         </div>
       </div>
     </div>

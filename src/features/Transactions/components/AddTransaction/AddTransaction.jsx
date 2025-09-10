@@ -71,7 +71,7 @@ export default function AddTransactionDialog() {
         </div>
         <div id="amount-field-wrapper">
           <label htmlFor="amount">Amount</label>
-          <div id="amount-input-wrapper">
+          <div className="icon-text">
             <span className="material-icons material-symbols-outlined">
               currency_rupee
             </span>
