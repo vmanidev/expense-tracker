@@ -65,6 +65,7 @@ export default function AddTransactionDialog() {
             name="title"
             value={formData.title}
             onChange={handleFormChange}
+            maxLength="15"
             required
           />
         </div>
