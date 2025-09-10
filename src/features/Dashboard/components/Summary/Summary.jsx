@@ -20,30 +20,15 @@ export default function Summary() {
       <div id="summary-main-container">
         <div id="income">
           <span className="income">Income</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{formatCurrency(totalIncome)}</span>
-          </span>
+          <span>{formatCurrency(totalIncome)}</span>
         </div>
         <div id="expenses">
           <span className="expense">Expenses</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{formatCurrency(totalExpenses)}</span>
-          </span>
+          <span>{formatCurrency(totalExpenses)}</span>
         </div>
         <div id="balance">
           <span>Balance</span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
-            </span>
-            <span>{formatCurrency(balance)}</span>
-          </span>
+          <span>{formatCurrency(balance)}</span>
         </div>
       </div>
     </div>

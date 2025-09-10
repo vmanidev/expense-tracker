@@ -38,12 +38,7 @@ export default function TransactionList() {
               </span>
               <span className="capitalize">{title}</span>
             </span>
-            <span className="icon-text">
-              <span className="material-icons material-symbols-outlined">
-                currency_rupee
-              </span>
-              <span>{formatCurrency(amount)}</span>
-            </span>
+            <span>{formatCurrency(amount)}</span>
             <span
               className={`capitalize ${
                 type === "income" ? "income" : "expense"
