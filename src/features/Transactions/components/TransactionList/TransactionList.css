@@ -19,7 +19,7 @@
 
 #transactionList-main-container ul li {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 100px 50px 50px 50px 50px;
   grid-template-rows: 1fr 1fr;
   gap: 1em;
   border-bottom: 1px solid #9e9e9e3b;

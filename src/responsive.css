@@ -12,6 +12,10 @@
     font-size: 1em;
   }
 
+  #transactionList-main-container ul li {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   :is(#income, #expenses, #balance) > span:first-child {
     font-size: 0.7em;
   }
