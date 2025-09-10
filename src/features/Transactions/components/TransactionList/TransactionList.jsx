@@ -5,6 +5,7 @@ import AddTransactionDialog from "../AddTransaction/AddTransaction";
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
 import { formatDate } from "../../../../utils/formatDate";
+import { sortByDate } from "../../../../utils/sortByDate";
 
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenDialog } = useExpense();
@@ -22,42 +23,46 @@ export default function TransactionList() {
   };
 
   const getExpenseList = (expenseList) => {
-    return expenseList.map(({ id, title, amount, type, category, date }) => {
-      return (
-        <li key={id}>
-          <span>{formatDate(date)}</span>
-          <span className="icon-text">
+    return sortByDate(expenseList).map(
+      ({ id, title, amount, type, category, date }) => {
+        return (
+          <li key={id}>
+            <span>{formatDate(date)}</span>
+            <span className="icon-text">
+              <span
+                className={`${
+                  type === "income" ? "income" : "expense"
+                } material-icons material-symbols-outlined`}
+              >
+                {type === "income" ? "call_made" : "call_received"}
+              </span>
+              <span className="capitalize">{title}</span>
+            </span>
+            <span className="icon-text">
+              <span className="material-icons material-symbols-outlined">
+                currency_rupee
+              </span>
+              <span>{amount}</span>
+            </span>
             <span
-              className={`${
+              className={`capitalize ${
                 type === "income" ? "income" : "expense"
-              } material-icons material-symbols-outlined`}
+              }`}
             >
-              {type === "income" ? "call_made" : "call_received"}
+              {type}
             </span>
-            <span className="capitalize">{title}</span>
-          </span>
-          <span className="icon-text">
-            <span className="material-icons material-symbols-outlined">
-              currency_rupee
+            <span className="capitalize">{category}</span>
+            <span
+              id="delete-icon"
+              className="material-icons material-symbols-outlined"
+              onClick={(e) => removeExpense(id)}
+            >
+              delete_forever
             </span>
-            <span>{amount}</span>
-          </span>
-          <span
-            className={`capitalize ${type === "income" ? "income" : "expense"}`}
-          >
-            {type}
-          </span>
-          <span className="capitalize">{category}</span>
-          <span
-            id="delete-icon"
-            className="material-icons material-symbols-outlined"
-            onClick={(e) => removeExpense(id)}
-          >
-            delete_forever
-          </span>
-        </li>
-      );
-    });
+          </li>
+        );
+      }
+    );
   };
 
   return (

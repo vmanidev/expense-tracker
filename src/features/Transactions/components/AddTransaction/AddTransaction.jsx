@@ -25,14 +25,18 @@ export default function AddTransactionDialog() {
 
   const closeDialog = () => {
     setOpenDialog(false);
+    resetForm();
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     addExpense(formData);
     setOpenDialog(false);
-    setFormData({ title: "", amount: "", type: "", category: "", date: "" });
+    resetForm();
   };
+
+  const resetForm = () =>
+    setFormData({ title: "", amount: "", type: "", category: "", date: "" });
 
   const handleFormChange = (event) => {
     const { name, value } = event.target;
