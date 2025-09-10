@@ -8,6 +8,10 @@
     font-size: 1em;
   }
 
+  #transactionList-main-container ul {
+    font-size: 1em;
+  }
+
   :is(#income, #expenses, #balance) > span:first-child {
     font-size: 0.7em;
   }
