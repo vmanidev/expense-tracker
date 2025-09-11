@@ -8,7 +8,7 @@ export default function PageFooter() {
       <span>Made with ❤️.</span>
       <span>Open Source under MIT License.</span>
       <a href="https://github.com/vmanidev/expense-tracker" target="_blank">
-        <img className="icon" src="./public/images/github.svg" />
+        <img className="icon" src="/images/github.svg" />
       </a>
     </div>
   );
