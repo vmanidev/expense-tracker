@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
+import { getLocalTransactions } from "../utils/localStorage";
 
 const ExpenseContext = createContext();
 
 const ExpenseProvider = ({ children }) => {
-  const [expenses, setExpense] = useState([]);
+  const [expenses, setExpense] = useState(getLocalTransactions() ?? []);
   const [openAddTransactionDialog, setOpenAddTransactionDialog] =
     useState(false);
 
