@@ -27,17 +27,16 @@
   align-items: center;
 }
 
-#transactionList-main-container ul li > span:first-child {
-  grid-column: span 6;
-}
-
-#transactionList-main-container ul li > span:last-child {
-  grid-column: end;
-}
-
-#transactionList-main-container ul li span:nth-child(2),
-span:nth-child(3) {
+#transactionList-main-container ul li span:first-child {
   grid-column: span 3;
+}
+
+#transactionList-main-container ul li span:nth-child(2) {
+  grid-column: span 2;
+}
+
+#transactionList-main-container ul li span:last-child {
+  justify-self: end;
 }
 
 #action-button-container {
