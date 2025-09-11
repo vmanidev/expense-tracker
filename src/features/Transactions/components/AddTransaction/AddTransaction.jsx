@@ -21,13 +21,19 @@ export default function AddTransactionDialog() {
 
   const { categories, setCategories } = useCategory();
 
-  useEffect(
-    () =>
-      openAddTransactionDialog
-        ? dialogRef.current.showModal()
-        : dialogRef.current.close(),
-    [openAddTransactionDialog]
-  );
+  useEffect(() => {
+    openAddTransactionDialog
+      ? dialogRef.current.showModal()
+      : dialogRef.current.close();
+
+    dialogRef.current.addEventListener("cancel", (e) => closeDialog());
+
+    return () => {
+      if (dialogRef.current) {
+        dialogRef.current.removeEventListener("cancel", (e) => closeDialog());
+      }
+    };
+  }, [openAddTransactionDialog]);
 
   const closeDialog = () => {
     setOpenAddTransactionDialog(false);
