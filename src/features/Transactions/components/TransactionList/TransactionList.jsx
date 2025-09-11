@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./TransactionList.css";
 import AddTransactionDialog from "../AddTransaction/AddTransaction";
@@ -7,9 +7,12 @@ import { useExpense } from "../../../../contexts/ExpenseContext";
 import { sortByDate, transformDate } from "../../../../utils/date";
 import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
+import { storeTransactionsLocal } from "../../../../utils/localStorage";
 
 export default function TransactionList() {
   const { expenses, removeExpense, setOpenAddTransactionDialog } = useExpense();
+
+  useEffect(() => storeTransactionsLocal(expenses), [expenses]);
 
   const TransactionListHeader = () => {
     return (
