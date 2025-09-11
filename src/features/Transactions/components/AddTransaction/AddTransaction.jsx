@@ -111,7 +111,10 @@ export default function AddTransactionDialog() {
         <div id="amount-field-wrapper">
           <label htmlFor="amount">Amount</label>
           <div className="icon-text">
-            <span className="material-icons material-symbols-outlined">
+            <span
+              id="rupee-icon"
+              className="material-icons material-symbols-outlined"
+            >
               currency_rupee
             </span>
             <input
