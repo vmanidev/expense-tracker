@@ -9,13 +9,13 @@ import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
 
 export default function TransactionList() {
-  const { expenses, removeExpense, setOpenDialog } = useExpense();
+  const { expenses, removeExpense, setOpenAddTransactionDialog } = useExpense();
 
   const TransactionListHeader = () => {
     return (
       <div id="action-button-container">
         <div className="section-title">Recent Transactions</div>
-        <button id="add-btn" onClick={(e) => setOpenDialog(true)}>
+        <button id="add-btn" onClick={(e) => setOpenAddTransactionDialog(true)}>
           <span className="material-icons material-symbols-outlined">add</span>
           <span>Add</span>
         </button>

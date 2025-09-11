@@ -4,19 +4,13 @@ const ExpenseContext = createContext();
 
 const ExpenseProvider = ({ children }) => {
   const [expenses, setExpense] = useState([]);
-  const [openDialog, setOpenDialog] = useState(false);
+  const [openAddTransactionDialog, setOpenAddTransactionDialog] =
+    useState(false);
 
   const addExpense = ({ title, amount, type, category, date }) => {
     setExpense((prev) => [
       ...prev,
-      {
-        id: prev.length + 1,
-        title,
-        amount: amount.toFixed(2),
-        type,
-        category,
-        date,
-      },
+      { id: prev.length + 1, title, amount, type, category, date },
     ]);
   };
 
@@ -54,8 +48,8 @@ const ExpenseProvider = ({ children }) => {
         totalIncome,
         totalExpenses,
         balance,
-        openDialog,
-        setOpenDialog,
+        openAddTransactionDialog,
+        setOpenAddTransactionDialog,
       }}
     >
       {children}

@@ -8,7 +8,8 @@ import { useCategory } from "../../../../contexts/CategoryContext";
 export default function AddTransactionDialog() {
   const dialogRef = useRef(null);
 
-  const { openDialog, expenses, setOpenDialog, addExpense } = useExpense();
+  const { openAddTransactionDialog, setOpenAddTransactionDialog, addExpense } =
+    useExpense();
 
   const [formData, setFormData] = useState({
     title: "",
@@ -22,19 +23,21 @@ export default function AddTransactionDialog() {
 
   useEffect(
     () =>
-      openDialog ? dialogRef.current.showModal() : dialogRef.current.close(),
-    [openDialog]
+      openAddTransactionDialog
+        ? dialogRef.current.showModal()
+        : dialogRef.current.close(),
+    [openAddTransactionDialog]
   );
 
   const closeDialog = () => {
-    setOpenDialog(false);
+    setOpenAddTransactionDialog(false);
     resetForm();
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     addExpense(formData);
-    setOpenDialog(false);
+    setOpenAddTransactionDialog(false);
     resetForm();
   };
 
