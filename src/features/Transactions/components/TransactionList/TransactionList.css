@@ -19,8 +19,8 @@
 
 #transactionList-main-container ul li {
   display: grid;
-  grid-template-columns: 100px 50px 50px 50px 50px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1em;
   border-bottom: 1px solid #9e9e9e3b;
   padding-bottom: 1em;
@@ -29,6 +29,15 @@
 
 #transactionList-main-container ul li > span:first-child {
   grid-column: span 6;
+}
+
+#transactionList-main-container ul li > span:last-child {
+  grid-column: end;
+}
+
+#transactionList-main-container ul li span:nth-child(2),
+span:nth-child(3) {
+  grid-column: span 3;
 }
 
 #action-button-container {
