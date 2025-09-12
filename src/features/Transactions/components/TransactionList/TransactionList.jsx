@@ -8,23 +8,12 @@ import { sortByDate, transformDate } from "../../../../utils/date";
 import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
 import { storeTransactionsLocal } from "../../../../utils/localStorage";
+import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
 
 export default function TransactionList() {
-  const { expenses, removeExpense, setOpenAddTransactionDialog } = useExpense();
+  const { expenses, removeExpense } = useExpense();
 
   useEffect(() => storeTransactionsLocal(expenses), [expenses]);
-
-  const TransactionListHeader = () => {
-    return (
-      <div id="action-button-container">
-        <div className="section-title">Recent Transactions</div>
-        <button id="add-btn" onClick={(e) => setOpenAddTransactionDialog(true)}>
-          <span className="material-icons material-symbols-outlined">add</span>
-          <span>Add</span>
-        </button>
-      </div>
-    );
-  };
 
   const getExpenseList = (expenseList) => {
     return sortByDate(expenseList).map(

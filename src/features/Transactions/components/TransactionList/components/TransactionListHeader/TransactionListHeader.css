@@ -1,0 +1,9 @@
+#action-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#add-btn span.material-icons {
+  font-size: 1em;
+}
