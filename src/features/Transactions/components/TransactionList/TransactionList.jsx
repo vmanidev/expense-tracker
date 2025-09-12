@@ -60,17 +60,17 @@ export default function TransactionList({ limit }) {
       <TransactionListHeader />
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
-        {limit && (
-          <Link id="view-all-trans-link" to="/transactions">
-            <span className="icon-text">
-              <span>View all transactions</span>
-              <span className="material-icons material-symbols-outlined">
-                arrow_right_alt
-              </span>
-            </span>
-          </Link>
-        )}
       </div>
+      {limit && (
+        <Link className="link" to="/transactions">
+          <span className="icon-text">
+            <span>View all transactions</span>
+            <span className="material-icons material-symbols-outlined">
+              chevron_right
+            </span>
+          </span>
+        </Link>
+      )}
     </div>
   );
 }
