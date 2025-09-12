@@ -59,11 +59,13 @@
   cursor: pointer;
 }
 
-#view-all-trans-btn {
-  background: none;
-  border: none;
-  display: flex;
+#view-all-trans-link {
+  width: fit-content;
   color: #3f51b5;
   margin-left: 1em;
-  cursor: pointer;
+  text-decoration: none;
+}
+
+#view-all-trans-link:hover {
+  color: #2196f3;
 }

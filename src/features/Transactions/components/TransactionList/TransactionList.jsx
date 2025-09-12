@@ -9,6 +9,7 @@ import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
 import { storeTransactionsLocal } from "../../../../utils/localStorage";
 import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
+import { Link } from "react-router-dom";
 
 export default function TransactionList({ limit }) {
   const { expenses, removeExpense } = useExpense();
@@ -60,12 +61,14 @@ export default function TransactionList({ limit }) {
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
         {limit && (
-          <button id="view-all-trans-btn">
-            <span className="icon-text">View all transactions</span>
-            <span className="material-icons material-symbols-outlined">
-              chevron_right
+          <Link id="view-all-trans-link" to="/transactions">
+            <span className="icon-text">
+              <span>View all transactions</span>
+              <span className="material-icons material-symbols-outlined">
+                arrow_right_alt
+              </span>
             </span>
-          </button>
+          </Link>
         )}
       </div>
     </div>
