@@ -1,6 +1,5 @@
 import React from "react";
 import PageHeader from "./ui-components/PageHeader/PageHeader";
-import Dashboard from "./features/Dashboard/Dashboard";
 
 import "./app.css";
 import "./responsive.css";
