@@ -1,6 +1,5 @@
 import React from "react";
 import PageHeader from "./ui-components/PageHeader/PageHeader";
-import Dashboard from "./features/Dashboard/Dashboard";
 
 import "./app.css";
 import "./responsive.css";
@@ -9,6 +8,7 @@ import ExpenseProvider from "./contexts/ExpenseContext";
 import CategoryContextProvider from "./contexts/CategoryContext";
 import PageFooter from "./ui-components/PageFooter/PageFooter";
 import AppRoutes from "./routes/AppRoutes";
+import AddTransactionDialog from "./features/Transactions/components/AddTransaction/AddTransaction";
 
 export default function App() {
   return (
@@ -19,6 +19,7 @@ export default function App() {
           <AppRoutes />
           <PageFooter />
         </div>
+        <AddTransactionDialog />
       </CategoryContextProvider>
     </ExpenseProvider>
   );

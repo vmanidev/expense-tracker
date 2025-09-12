@@ -1,20 +1,17 @@
 import React, { useEffect } from "react";
 
 import "./TransactionList.css";
-import AddTransactionDialog from "../AddTransaction/AddTransaction";
+
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
 import { sortByDate, transformDate } from "../../../../utils/date";
 import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
-import { storeTransactionsLocal } from "../../../../utils/localStorage";
 import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
 import { Link } from "react-router-dom";
 
 export default function TransactionList({ limit }) {
   const { expenses, removeExpense } = useExpense();
-
-  useEffect(() => storeTransactionsLocal(expenses), [expenses]);
 
   const getExpenseList = (expenseList) => {
     return sortByDate(expenseList)
@@ -56,7 +53,6 @@ export default function TransactionList({ limit }) {
 
   return (
     <div>
-      <AddTransactionDialog />
       <TransactionListHeader />
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>

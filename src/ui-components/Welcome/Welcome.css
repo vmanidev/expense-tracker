@@ -1,0 +1,21 @@
+#welcome-main-container {
+  text-align: center;
+  height: 400px;
+}
+
+#info-txt {
+  font-style: italic;
+  color: #4caf50;
+}
+
+#welcome-add-btn {
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  margin: 2rem auto;
+  color: #fff;
+  background: linear-gradient(320deg, #000000, #9e9e9e);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
