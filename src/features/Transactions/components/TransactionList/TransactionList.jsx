@@ -65,7 +65,7 @@ export default function TransactionList({ limit }) {
             <span className="icon-text">
               <span>View all transactions</span>
               <span className="material-icons material-symbols-outlined">
-                arrow_right_alt
+                chevron_right
               </span>
             </span>
           </Link>
