@@ -9,6 +9,7 @@ import ExpenseProvider from "./contexts/ExpenseContext";
 import CategoryContextProvider from "./contexts/CategoryContext";
 import PageFooter from "./ui-components/PageFooter/PageFooter";
 import AppRoutes from "./routes/AppRoutes";
+import AddTransactionDialog from "./features/Transactions/components/AddTransaction/AddTransaction";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <AppRoutes />
           <PageFooter />
         </div>
+        <AddTransactionDialog />
       </CategoryContextProvider>
     </ExpenseProvider>
   );

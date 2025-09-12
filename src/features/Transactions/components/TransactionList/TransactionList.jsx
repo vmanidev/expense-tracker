@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import "./TransactionList.css";
-import AddTransactionDialog from "../AddTransaction/AddTransaction";
+
 import { useExpense } from "../../../../contexts/ExpenseContext";
 
 import { sortByDate, transformDate } from "../../../../utils/date";
@@ -56,7 +56,6 @@ export default function TransactionList({ limit }) {
 
   return (
     <div>
-      <AddTransactionDialog />
       <TransactionListHeader />
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
