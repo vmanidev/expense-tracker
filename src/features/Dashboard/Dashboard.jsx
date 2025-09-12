@@ -10,9 +10,11 @@ export default function Dashboard() {
   if (expenses.length < 1) {
     return <Intro />;
   } else {
-    <>
-      <Summary />
-      <TransactionList limit="5" />
-    </>;
+    return (
+      <>
+        <Summary />
+        <TransactionList limit="5" />
+      </>
+    );
   }
 }
