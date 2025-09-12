@@ -59,6 +59,14 @@ export default function TransactionList({ limit }) {
       <TransactionListHeader />
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
+        {limit && (
+          <button id="view-all-trans-btn">
+            <span className="icon-text">View all transactions</span>
+            <span className="material-icons material-symbols-outlined">
+              chevron_right
+            </span>
+          </button>
+        )}
       </div>
     </div>
   );
