@@ -1,4 +1,4 @@
-# Expense Manager
+# Expense Tracker
 
 The Expense Tracker App is a simple React application that helps users manage their personal finances. Users can quickly add income and expense transactions, view their balance, and track their spending habits.
 
