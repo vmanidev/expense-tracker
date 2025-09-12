@@ -19,9 +19,9 @@ export default function TransactionList({ limit }) {
   const getExpenseList = (expenseList) => {
     return sortByDate(expenseList)
       .slice(0, limit)
-      .map(({ id, title, amount, type, category, date }) => {
+      .map(({ id, title, amount, type, category, date }, index) => {
         return (
-          <li key={id}>
+          <li key={`${id}_${index}`}>
             <span>{transformDate(date)}</span>
             <span className="icon-text">
               <span
