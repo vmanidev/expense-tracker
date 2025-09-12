@@ -8,6 +8,7 @@ import "./responsive.css";
 import ExpenseProvider from "./contexts/ExpenseContext";
 import CategoryContextProvider from "./contexts/CategoryContext";
 import PageFooter from "./ui-components/PageFooter/PageFooter";
+import AppRoutes from "./routes/AppRoutes";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
       <CategoryContextProvider>
         <div id="app">
           <PageHeader />
-          <Dashboard />
+          <AppRoutes />
           <PageFooter />
         </div>
       </CategoryContextProvider>
