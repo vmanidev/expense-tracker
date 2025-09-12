@@ -17,7 +17,7 @@ export default function Intro() {
         To get started, please click the <strong>Add Transaction</strong> button
         to begin.
       </p>
-      <button id="add-btn" onClick={(e) => setOpenAddTransactionDialog(true)}>
+      <button id="intro-add-btn" onClick={(e) => setOpenAddTransactionDialog(true)}>
         Add Transaction
       </button>
     </div>
