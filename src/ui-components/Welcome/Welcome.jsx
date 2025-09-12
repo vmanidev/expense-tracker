@@ -1,13 +1,13 @@
 import React from "react";
 
-import "./Intro.css";
+import "./Welcome.css";
 import { useExpense } from "../../contexts/ExpenseContext";
 
-export default function Intro() {
+export default function Welcome() {
   const { setOpenAddTransactionDialog } = useExpense();
 
   return (
-    <div id="intro-main-container">
+    <div id="welcome-main-container">
       <h1>Welcome to Expense Tracker</h1>
       <p id="info-txt">
         Keep track of your income and expenses in one place. It's simple, fast,
@@ -17,7 +17,10 @@ export default function Intro() {
         To get started, please click the <strong>Add Transaction</strong> button
         to begin.
       </p>
-      <button id="intro-add-btn" onClick={(e) => setOpenAddTransactionDialog(true)}>
+      <button
+        id="welcome-add-btn"
+        onClick={(e) => setOpenAddTransactionDialog(true)}
+      >
         Add Transaction
       </button>
     </div>

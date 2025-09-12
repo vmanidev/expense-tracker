@@ -1,4 +1,4 @@
-#intro-main-container {
+#welcome-main-container {
   text-align: center;
   height: 400px;
 }
@@ -8,7 +8,7 @@
   color: #4caf50;
 }
 
-#intro-add-btn {
+#welcome-add-btn {
   border: none;
   padding: 10px;
   font-size: 1em;
