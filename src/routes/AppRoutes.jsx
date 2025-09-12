@@ -25,6 +25,16 @@ export default function AppRoutes() {
   return (
     <Routes>
       {getRoutes()}
+      <Route
+        path="*"
+        element={
+          expenses.length < 1 ? (
+            <Navigate to="/welcome" replace />
+          ) : (
+            <Navigate to="/" replace />
+          )
+        }
+      />
     </Routes>
   );
 }
