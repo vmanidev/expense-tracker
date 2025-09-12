@@ -9,15 +9,17 @@ import { formatCurrency } from "../../../../utils/currency";
 import { CATEGORY_MAP } from "../../../../constants/category";
 import { storeTransactionsLocal } from "../../../../utils/localStorage";
 import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
+import { Link } from "react-router-dom";
 
-export default function TransactionList() {
+export default function TransactionList({ limit }) {
   const { expenses, removeExpense } = useExpense();
 
   useEffect(() => storeTransactionsLocal(expenses), [expenses]);
 
   const getExpenseList = (expenseList) => {
-    return sortByDate(expenseList).map(
-      ({ id, title, amount, type, category, date }) => {
+    return sortByDate(expenseList)
+      .slice(0, limit)
+      .map(({ id, title, amount, type, category, date }) => {
         return (
           <li key={id}>
             <span>{transformDate(date)}</span>
@@ -49,8 +51,7 @@ export default function TransactionList() {
             </span>
           </li>
         );
-      }
-    );
+      });
   };
 
   return (
@@ -59,6 +60,16 @@ export default function TransactionList() {
       <TransactionListHeader />
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
+        {limit && (
+          <Link id="view-all-trans-link" to="/transactions">
+            <span className="icon-text">
+              <span>View all transactions</span>
+              <span className="material-icons material-symbols-outlined">
+                arrow_right_alt
+              </span>
+            </span>
+          </Link>
+        )}
       </div>
     </div>
   );

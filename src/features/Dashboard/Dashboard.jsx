@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <>
       <Summary />
-      <TransactionList />
+      <TransactionList limit="5" />
     </>
   );
 }
