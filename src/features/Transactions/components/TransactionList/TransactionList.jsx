@@ -10,14 +10,15 @@ import { CATEGORY_MAP } from "../../../../constants/category";
 import { storeTransactionsLocal } from "../../../../utils/localStorage";
 import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
 
-export default function TransactionList() {
+export default function TransactionList({ limit }) {
   const { expenses, removeExpense } = useExpense();
 
   useEffect(() => storeTransactionsLocal(expenses), [expenses]);
 
   const getExpenseList = (expenseList) => {
-    return sortByDate(expenseList).map(
-      ({ id, title, amount, type, category, date }) => {
+    return sortByDate(expenseList)
+      .slice(0, limit)
+      .map(({ id, title, amount, type, category, date }) => {
         return (
           <li key={id}>
             <span>{transformDate(date)}</span>
@@ -49,8 +50,7 @@ export default function TransactionList() {
             </span>
           </li>
         );
-      }
-    );
+      });
   };
 
   return (
