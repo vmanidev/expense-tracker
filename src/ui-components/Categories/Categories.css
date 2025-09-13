@@ -56,3 +56,15 @@
   border-bottom: 1px solid gray;
   outline: none;
 }
+
+.edit-input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  grid-column: span 2;
+}
+
+.save-icon {
+  align-self: center;
+  cursor: pointer;
+}
