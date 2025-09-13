@@ -44,10 +44,6 @@
     height: 400px;
   }
 
-  #category-container ul {
-    height: 300px;
-  }
-
   #add-category {
     grid-column: span 2;
   }
