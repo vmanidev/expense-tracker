@@ -20,7 +20,7 @@ export default function Categories() {
 
   const editBtn = (value, text) => (
     <span
-      className="link save-icon material-icons material-symbols-outlined"
+      className="link material-icons material-symbols-outlined"
       onClick={(e) => setEditInput({ edit: true, value, text })}
     >
       edit
@@ -81,7 +81,7 @@ export default function Categories() {
               onChange={handleEditChange}
             />
             <span
-              class="link material-icons material-symbols-outlined"
+              class="link save-icon material-icons material-symbols-outlined"
               onClick={doneEdit}
             >
               save
