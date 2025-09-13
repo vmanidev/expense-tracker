@@ -6,6 +6,7 @@
 
   #transactionList-main-container {
     font-size: 1em;
+    height: 400px;
   }
 
   #transactionList-main-container ul {
