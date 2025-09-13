@@ -34,7 +34,7 @@
 #add-category {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
   font-size: 1em;
 }
 
@@ -55,6 +55,4 @@
   border: none;
   border-bottom: 1px solid gray;
   outline: none;
-  color: gray;
-  width: 20em;
 }
