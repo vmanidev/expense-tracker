@@ -83,7 +83,7 @@ export default function AddTransactionDialog() {
   const renderCategories = (type) => {
     return (
       <>
-        <option key="placeholder" value="placeholder" disabled>
+        <option key="placeholder" value="" disabled>
           {type === "income"
             ? "Ex. Salary, Bonus, etc."
             : "Ex. Food, Groceries, etc."}
