@@ -1,0 +1,32 @@
+#category-container {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 4em;
+  height: 500px;
+}
+
+#category-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  list-style: none;
+  width: fit-content;
+  padding: 0;
+  height: 400px;
+  overflow: scroll;
+}
+
+#category-container li {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+}
+
+#category-container .delete-icon {
+  color: var(--expense-color);
+  cursor: pointer;
+}
+
+#category-container .edit-icon {
+  cursor: pointer;
+}
