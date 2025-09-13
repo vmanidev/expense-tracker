@@ -36,7 +36,7 @@ A modern, open-source **Expense Tracker** app built with **React**. Track your i
 
 * **Frontend**: React
 * **State Management**: React Context API
-* **Styling**: CSS / Tailwind
+* **Styling**: CSS 
 * **Storage**: Browser `localStorage`
 
 ---
