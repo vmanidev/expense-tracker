@@ -11,18 +11,6 @@ A modern, open-source **Expense Tracker** app built with **React**. Track your i
 
 ---
 
-## Table of Contents 📑
-
-* [Features](#features-✨)
-* [Screenshots & Demo](#screenshots--demo)
-* [Tech Stack](#tech-stack-🛠)
-* [Installation](#installation-⚡)
-* [Usage](#usage-📝)
-* [Contribution](#contribution-🤝)
-* [License](#license-📄)
-
----
-
 ## Features ✨
 
 * **Category Management**: Add, edit, and delete income/expense categories ![Category](https://img.shields.io/badge/Category-Management-brightgreen)
