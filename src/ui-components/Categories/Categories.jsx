@@ -50,7 +50,7 @@ export default function Categories() {
               onChange={handleEditChange}
             />
             <span
-              class="link save-icon material-icons material-symbols-outlined"
+              className="link save-icon material-icons material-symbols-outlined"
               onClick={doneEdit}
             >
               save
@@ -81,7 +81,7 @@ export default function Categories() {
               onChange={handleEditChange}
             />
             <span
-              class="link save-icon material-icons material-symbols-outlined"
+              className="link save-icon material-icons material-symbols-outlined"
               onClick={doneEdit}
             >
               save
