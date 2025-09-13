@@ -6,6 +6,10 @@ const CategoryContext = createContext();
 const CategoryContextProvider = ({ children }) => {
   const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
 
+  const addCategories = name => {
+    console.log(name)
+  };
+
   const CATEGORY_MAP = [...categories.expense, ...categories.income].reduce(
     (acc, obj) => ({ ...acc, [obj.value]: obj.text }),
     {}
@@ -13,7 +17,7 @@ const CategoryContextProvider = ({ children }) => {
 
   return (
     <CategoryContext.Provider
-      value={{ categories, setCategories, CATEGORY_MAP }}
+      value={{ categories, addCategories, CATEGORY_MAP }}
     >
       {children}
     </CategoryContext.Provider>

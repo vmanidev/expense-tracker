@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import "./Categories.css";
 import { useCategory } from "../../contexts/CategoryContext";
 
 export default function Categories() {
-  const { categories } = useCategory();
+  const { categories, addCategories } = useCategory();
+  const [formData, setFormData] = useState({
+    category: "",
+    type: "",
+  });
 
   const editBtn = () => (
     <span className="edit-icon link material-icons material-symbols-outlined">
@@ -38,6 +42,17 @@ export default function Categories() {
     ));
   };
 
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (formData.type === "" || formData.category === "") return;
+    addCategories(formData);
+  };
+
   return (
     <>
       <div className="section-title">Categories</div>
@@ -52,8 +67,29 @@ export default function Categories() {
         </div>
         <div id="add-category">
           <span className="section-title">Add New Categories</span>
-          <input id="category-name" type="text" placeholder="Ex: Food, Shopping, etc." />
-          <button className="add-btn" type="submit">
+          <input
+            name="category"
+            id="category-name"
+            type="text"
+            placeholder="Ex: Food, Shopping, etc."
+            value={formData.category}
+            onChange={handleFormChange}
+            required
+          />
+          <select
+            name="type"
+            id="category-type"
+            value={formData.type}
+            onChange={handleFormChange}
+            required
+          >
+            <option value="" disabled>
+              Income/Expense
+            </option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button className="add-btn" type="submit" onClick={handleFormSubmit}>
             Add
           </button>
         </div>
