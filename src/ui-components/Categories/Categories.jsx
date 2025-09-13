@@ -1,18 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import "./Categories.css";
 import { useCategory } from "../../contexts/CategoryContext";
 import { Link } from "react-router-dom";
 
 export default function Categories() {
-  const { categories, addCategories, removeCategory } = useCategory();
+  const { categories, addCategories, removeCategory, editCategory } =
+    useCategory();
   const [formData, setFormData] = useState({
     category: "",
     type: "",
   });
 
-  const editBtn = (value) => (
-    <span className="edit-icon link material-icons material-symbols-outlined">
+  const [editInput, setEditInput] = useState({
+    edit: false,
+    text: "",
+    value: "",
+  });
+
+  const editBtn = (value, text) => (
+    <span
+      className="link material-icons material-symbols-outlined"
+      onClick={(e) => setEditInput({ edit: true, value, text })}
+    >
       edit
     </span>
   );
@@ -29,9 +39,30 @@ export default function Categories() {
   const getIncomeCategories = () => {
     return categories.income.map(({ text, value }, index) => (
       <li key={`${value}_${index}`} value={value}>
-        <span>{text}</span>
-        {editBtn(value)}
-        {deleteBtn(value)}
+        {editInput.edit && editInput.value === value ? (
+          <>
+            <input
+              className="edit-input"
+              id={`edit-input-${index}`}
+              name={value}
+              type="text"
+              value={editInput.text}
+              onChange={handleEditChange}
+            />
+            <span
+              class="link save-icon material-icons material-symbols-outlined"
+              onClick={doneEdit}
+            >
+              save
+            </span>
+          </>
+        ) : (
+          <>
+            <span>{text}</span>
+            {editBtn(value, text)}
+            {deleteBtn(value)}
+          </>
+        )}
       </li>
     ));
   };
@@ -39,9 +70,30 @@ export default function Categories() {
   const getExpenseCategories = () => {
     return categories.expense.map(({ text, value }, index) => (
       <li key={`${value}_${index}`} value={value}>
-        <span>{text}</span>
-        {editBtn(value)}
-        {deleteBtn(value)}
+        {editInput.edit && editInput.value === value ? (
+          <>
+            <input
+              className="edit-input"
+              id={`edit-input-${index}`}
+              name={value}
+              type="text"
+              value={editInput.text}
+              onChange={handleEditChange}
+            />
+            <span
+              class="link save-icon material-icons material-symbols-outlined"
+              onClick={doneEdit}
+            >
+              save
+            </span>
+          </>
+        ) : (
+          <>
+            <span>{text}</span>
+            {editBtn(value, text)}
+            {deleteBtn(value)}
+          </>
+        )}
       </li>
     ));
   };
@@ -59,6 +111,16 @@ export default function Categories() {
   };
 
   const deleteCategory = (id) => removeCategory(id);
+
+  const doneEdit = () => {
+    editCategory(editInput.value, editInput.text);
+    setEditInput({ edit: false, value: "", text: "" });
+  };
+
+  const handleEditChange = (e) => {
+    const { value } = e.target;
+    setEditInput((prev) => ({ ...prev, text: value }));
+  };
 
   return (
     <>
