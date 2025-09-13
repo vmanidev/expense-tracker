@@ -1,9 +1,7 @@
 #category-container {
-  display: flex;
-  justify-content: space-between;
-  width: fit-content;
-  gap: 4em;
-  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
 }
 
 #category-container ul {
@@ -29,4 +27,24 @@
 
 #category-container .edit-icon {
   cursor: pointer;
+  justify-self: center;
+}
+
+#add-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1em;
+}
+
+#add-category input {
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#add-category button {
+  padding: 10px;
+  border-radius: 10px;
 }

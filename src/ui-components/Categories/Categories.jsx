@@ -50,6 +50,13 @@ export default function Categories() {
           <span className="section-title">Expenses</span>
           <ul>{getExpenseCategories()}</ul>
         </div>
+        <div id="add-category">
+          <span className="section-title">Add New Categories</span>
+          <input id="category-name" type="text" placeholder="Ex: Food, Shopping, etc." />
+          <button className="add-btn" type="submit">
+            Add
+          </button>
+        </div>
       </div>
     </>
   );
