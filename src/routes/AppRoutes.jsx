@@ -5,6 +5,7 @@ import Transactions from "../features/Transactions/Transactions";
 import Welcome from "../ui-components/Welcome/Welcome";
 import { useExpense } from "../contexts/ExpenseContext";
 import { storeTransactionsLocal } from "../utils/localStorage";
+import Categories from "../ui-components/Categories/Categories";
 
 export default function AppRoutes() {
   const { expenses } = useExpense();
@@ -20,6 +21,7 @@ export default function AppRoutes() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/transactions" element={<Transactions />} />
+          <Route path="/categories" element={<Categories />} />
         </>
       );
     }
