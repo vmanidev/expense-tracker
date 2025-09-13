@@ -55,6 +55,7 @@ export default function Categories() {
     e.preventDefault();
     if (formData.type === "" || formData.category === "") return;
     addCategories(formData);
+    setFormData({ category: "", type: "" });
   };
 
   const deleteCategory = (id) => removeCategory(id);
@@ -107,13 +108,13 @@ export default function Categories() {
           </button>
         </div>
       </div>
-      
+
       <Link className="link" to="/dashboard">
         <span className="icon-text">
           <span className="material-icons material-symbols-outlined">
             chevron_left
           </span>
-          <span>Back to Dashboard</span>
+          <span>Go to Dashboard</span>
         </span>
       </Link>
     </>
