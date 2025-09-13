@@ -37,4 +37,18 @@
     font-size: 1.5em;
     font-weight: 700;
   }
+
+  #category-container {
+    grid-template-columns: repeat(4, 1fr);
+    height: 400px;
+  }
+
+  #add-category {
+    grid-column: span 2;
+  }
+
+  .categories {
+    border-left: 1px solid #9e9e9e3b;
+    border-top: none;
+  }
 }
