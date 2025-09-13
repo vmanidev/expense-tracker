@@ -57,7 +57,7 @@ export default function TransactionList({ limit }) {
       <div id="transactionList-main-container">
         <ul>{getExpenseList(expenses)}</ul>
       </div>
-      {limit && (
+      {expenses.length >= limit && (
         <Link className="link" to="/transactions">
           <span className="icon-text">
             <span>View all transactions</span>
