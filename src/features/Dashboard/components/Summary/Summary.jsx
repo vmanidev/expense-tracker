@@ -11,11 +11,6 @@ export default function Summary() {
     <div>
       <div id="summary-header">
         <div className="section-title">Summary</div>
-        <select id="year-select-field">
-          <option>2025</option>
-          <option>2024</option>
-          <option>2023</option>
-        </select>
       </div>
       <div id="summary-main-container">
         <div id="income">
