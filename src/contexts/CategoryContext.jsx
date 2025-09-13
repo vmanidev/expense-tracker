@@ -41,9 +41,11 @@ const CategoryContextProvider = ({ children }) => {
       ...prev,
       income: prev.income.map((category) => {
         if (category.value === value) category.text = text;
+        return category;
       }),
       expense: prev.expense.map((category) => {
         if (category.value === value) category.text = text;
+        return category;
       }),
     }));
 
