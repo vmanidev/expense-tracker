@@ -1,16 +1,19 @@
 import React, { createContext, useContext, useState } from "react";
 import { DEFAULT_CATEGORIES } from "../constants/category";
+import { getLocalCategories } from "../utils/localStorage";
 
 const CategoryContext = createContext();
 
 const CategoryContextProvider = ({ children }) => {
-  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
+  const [categories, setCategories] = useState(
+    getLocalCategories() ?? DEFAULT_CATEGORIES
+  );
 
   const addCategories = ({ category, type }) => {
     setCategories((prev) => {
       const newCategory = {
         text: category,
-        value: category.replace(/[^A-Za-z0-9_]/g, "").toLowerCase(),
+        value: category.replace(/[^A-Za-z0-9_]/g, "").toLowerCase(), //unique value
       };
       if (type === "income") {
         return {
