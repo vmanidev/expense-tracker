@@ -23,8 +23,8 @@ export default function Categories() {
   );
 
   const getIncomeCategories = () => {
-    return categories.income.map(({ text, value }) => (
-      <li key={value} value={value}>
+    return categories.income.map(({ text, value }, index) => (
+      <li key={`${value}_${index}`} value={value}>
         <span>{text}</span>
         {editBtn()}
         {deleteBtn()}
@@ -33,8 +33,8 @@ export default function Categories() {
   };
 
   const getExpenseCategories = () => {
-    return categories.expense.map(({ text, value }) => (
-      <li key={value} value={value}>
+    return categories.expense.map(({ text, value }, index) => (
+      <li key={`${value}_${index}`} value={value}>
         <span>{text}</span>
         {editBtn()}
         {deleteBtn()}

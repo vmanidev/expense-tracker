@@ -88,9 +88,9 @@ export default function AddTransactionDialog() {
             ? "Ex. Salary, Bonus, etc."
             : "Ex. Food, Groceries, etc."}
         </option>
-        {getCategories(type).map(({ text, value }) => {
+        {getCategories(type).map(({ text, value }, index) => {
           return (
-            <option key={value} value={value}>
+            <option key={`${value}_${index}`} value={value}>
               {text}
             </option>
           );
