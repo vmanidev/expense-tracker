@@ -1,9 +1,5 @@
 import React from "react";
 import PageHeader from "./ui-components/PageHeader/PageHeader";
-
-import "./app.css";
-import "./responsive.css";
-
 import ExpenseProvider from "./contexts/ExpenseContext";
 import CategoryContextProvider from "./contexts/CategoryContext";
 import PageFooter from "./ui-components/PageFooter/PageFooter";
