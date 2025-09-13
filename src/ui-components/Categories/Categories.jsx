@@ -127,20 +127,6 @@ export default function Categories() {
       <div className="section-title">Categories</div>
 
       <div id="category-container">
-        {categories.income.length > 0 && (
-          <div className="categories">
-            <span className="section-title">Income</span>
-            <ul>{getIncomeCategories()}</ul>
-          </div>
-        )}
-
-        {categories.expense.length > 0 && (
-          <div className="categories">
-            <span className="section-title">Expenses</span>
-            <ul>{getExpenseCategories()}</ul>
-          </div>
-        )}
-
         <div id="add-category">
           <span className="section-title">Add New Categories</span>
           <input
@@ -169,6 +155,20 @@ export default function Categories() {
             Add
           </button>
         </div>
+
+        {categories.income.length > 0 && (
+          <div className="categories">
+            <span className="section-title">Income</span>
+            <ul>{getIncomeCategories()}</ul>
+          </div>
+        )}
+
+        {categories.expense.length > 0 && (
+          <div className="categories">
+            <span className="section-title">Expenses</span>
+            <ul>{getExpenseCategories()}</ul>
+          </div>
+        )}
       </div>
 
       <Link className="link" to="/dashboard">
