@@ -3,15 +3,15 @@ import React, { useEffect } from "react";
 import "./TransactionList.css";
 
 import { useExpense } from "../../../../contexts/ExpenseContext";
-
 import { sortByDate, transformDate } from "../../../../utils/date";
 import { formatCurrency } from "../../../../utils/currency";
-import { CATEGORY_MAP } from "../../../../constants/category";
 import { TransactionListHeader } from "./components/TransactionListHeader/TransactionListHeader";
 import { Link } from "react-router-dom";
+import { useCategory } from "../../../../contexts/CategoryContext";
 
 export default function TransactionList({ limit }) {
   const { expenses, removeExpense } = useExpense();
+  const { CATEGORY_MAP } = useCategory();
 
   const getExpenseList = (expenseList) => {
     return sortByDate(expenseList)
