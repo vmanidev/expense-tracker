@@ -36,6 +36,17 @@ const CategoryContextProvider = ({ children }) => {
       expense: prev.expense.filter(({ value }) => value !== id),
     }));
 
+  const editCategory = (value, text) =>
+    setCategories((prev) => ({
+      ...prev,
+      income: prev.income.map((category) => {
+        if (category.value === value) category.text = text;
+      }),
+      expense: prev.expense.map((category) => {
+        if (category.value === value) category.text = text;
+      }),
+    }));
+
   const CATEGORY_MAP = [...categories.expense, ...categories.income].reduce(
     (acc, obj) => ({ ...acc, [obj.value]: obj.text }),
     {}
@@ -43,7 +54,13 @@ const CategoryContextProvider = ({ children }) => {
 
   return (
     <CategoryContext.Provider
-      value={{ categories, addCategories, removeCategory, CATEGORY_MAP }}
+      value={{
+        categories,
+        addCategories,
+        removeCategory,
+        editCategory,
+        CATEGORY_MAP,
+      }}
     >
       {children}
     </CategoryContext.Provider>
