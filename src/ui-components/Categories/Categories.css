@@ -1,0 +1,58 @@
+#category-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  height: 400px;
+}
+
+#category-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  list-style: none;
+  width: fit-content;
+  padding: 0;
+  height: 300px;
+  overflow: scroll;
+}
+
+#category-container li {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+}
+
+#category-container .delete-icon {
+  color: var(--expense-color);
+  cursor: pointer;
+}
+
+#category-container .edit-icon {
+  cursor: pointer;
+  justify-self: center;
+}
+
+#add-category {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  font-size: 1em;
+}
+
+#add-category input {
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#add-category button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#add-category select {
+  padding: 0.5em;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+}

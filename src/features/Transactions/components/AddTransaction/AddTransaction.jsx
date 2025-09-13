@@ -4,6 +4,7 @@ import "./addTransaction.css";
 
 import { useExpense } from "../../../../contexts/ExpenseContext";
 import { useCategory } from "../../../../contexts/CategoryContext";
+import { useNavigate } from "react-router-dom";
 
 export default function AddTransactionDialog() {
   const dialogRef = useRef(null);
@@ -20,6 +21,8 @@ export default function AddTransactionDialog() {
   });
 
   const { categories, setCategories } = useCategory();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     openAddTransactionDialog
@@ -64,6 +67,11 @@ export default function AddTransactionDialog() {
 
   const handleFormChange = (event) => {
     const { name, value } = event.target;
+    if (name === "category" && value === "addNewCategories") {
+      closeDialog();
+      navigate("/categories");
+      return;
+    }
     setFormData((prev) => ({
       ...prev,
       [name]: name === "amount" ? Number(value) : value, //convert amount string to number value
@@ -75,18 +83,21 @@ export default function AddTransactionDialog() {
   const renderCategories = (type) => {
     return (
       <>
-        <option value="" disabled>
+        <option key="placeholder" value="" disabled>
           {type === "income"
             ? "Ex. Salary, Bonus, etc."
             : "Ex. Food, Groceries, etc."}
         </option>
-        {getCategories(type).map(({ text, value }) => {
+        {getCategories(type).map(({ text, value }, index) => {
           return (
-            <option key={value} value={value}>
+            <option key={`${value}_${index}`} value={value}>
               {text}
             </option>
           );
         })}
+        <option key="addNewCategories" value="addNewCategories">
+          ✍️ Add New Categories
+        </option>
       </>
     );
   };
