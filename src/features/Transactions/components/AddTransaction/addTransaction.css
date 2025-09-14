@@ -36,7 +36,6 @@ form select {
   border: none;
   border-bottom: var(--primary-border);
   outline: none;
-  color: var(--text-color);
   width: 260px;
 }
 

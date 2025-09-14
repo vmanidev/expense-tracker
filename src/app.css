@@ -54,7 +54,7 @@
   --font-bold: 700;
 }
 
-:root[data-theme="dark"] {
+.dark_mode {
   /* Color (dark mode) */
   --primary-color: #7986cb;
   --primary-hover: #5c6bc0;
@@ -81,6 +81,8 @@ body {
   font-family: var(--font-family);
   font-weight: var(--font-regular);
   font-size: var(--body-1);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 #app {
