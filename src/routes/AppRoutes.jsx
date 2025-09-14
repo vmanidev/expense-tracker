@@ -28,7 +28,6 @@ export default function AppRoutes() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/transactions" element={<Transactions />} />
-          <Route path="/categories" element={<Categories />} />
         </>
       );
     }
@@ -37,6 +36,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       {getRoutes()}
+      <Route path="/categories" element={<Categories />} />
       <Route
         path="*"
         element={
