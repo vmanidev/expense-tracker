@@ -44,15 +44,15 @@ form select {
 }
 
 .add-btn {
-  background: var(--text-color);
-  color: var(--background-color);
+  background: var(--primary-color);
   border: none;
+  color: var(--text-color);
 }
 
 .cancel-btn {
-  color: var(--text-color);
-  background: var(--background-color);
-  border: var(--primary-border);
+  background: none;
+  border: none;
+  color: var(--primary-color);
 }
 
 .icon-text #rupee-icon {
