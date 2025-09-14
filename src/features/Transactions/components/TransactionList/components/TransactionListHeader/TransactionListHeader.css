@@ -5,5 +5,5 @@
 }
 
 #add-btn span.material-icons {
-  font-size: 1em;
+  font-size: var(--button);
 }

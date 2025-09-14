@@ -1,26 +1,25 @@
 dialog {
   border: none;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--elevation-2);
 }
 
 .dialog-footer {
   display: flex;
-  gap: 1em;
+  gap: var(--space-4);
   justify-content: end;
 }
 
 .dialog-footer > button {
   min-width: 60px;
-  padding: 5px;
-  border-radius: 5px;
+  padding: var(--space-1);
+  border-radius: var(--space-1);
   outline: none;
-  cursor: pointer;
 }
 
 form {
   display: grid;
-  gap: 2em;
-  margin: 1em auto;
+  gap: var(--space-4);
+  margin: var(--space-2) auto;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
 }
@@ -28,38 +27,33 @@ form {
 form > div {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-}
-
-form label {
-  font-size: 12px;
+  gap: var(--space-1);
 }
 
 form input,
 form select {
-  padding: 0.5em;
+  padding: var(--space-2);
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: var(--primary-border);
   outline: none;
-  color: gray;
-  width: 20em;
+  color: var(--text-color);
+  width: 260px;
 }
 
 form select {
-  width: 21em;
+  width: 275px;
 }
 
 .add-btn {
-  background: black;
-  color: white;
+  background: var(--text-color);
+  color: var(--background-color);
   border: none;
-  cursor: pointer;
 }
 
 .cancel-btn {
-  color: black;
-  background: white;
-  border: 2px solid black;
+  color: var(--text-color);
+  background: var(--background-color);
+  border: var(--primary-border);
 }
 
 .icon-text #rupee-icon {
@@ -67,5 +61,5 @@ form select {
 }
 
 .icon-text input {
-  text-indent: 1em;
+  text-indent: var(--space-4);
 }
