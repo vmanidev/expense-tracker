@@ -5,17 +5,15 @@
 
 #info-txt {
   font-style: italic;
-  color: #4caf50;
+  color: var(--positive-color);
 }
 
 #welcome-add-btn {
   border: none;
-  padding: 10px;
-  font-size: 1em;
-  margin: 2rem auto;
-  color: #fff;
-  background: linear-gradient(320deg, #000000, #9e9e9e);
-  border-radius: 10px;
-  cursor: pointer;
-  user-select: none;
+  font-size: var(--button);
+  padding: var(--space-3);
+  margin: var(--space-8);
+  color: var(--background-color);
+  background: var(--text-color);
+  border-radius: var(--space-3);
 }

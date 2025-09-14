@@ -1,7 +1,7 @@
 #category-container {
   display: grid;
-  gap: 2em;
-  border-bottom: 1px solid #9e9e9e3b;
+  gap: var(--space-8);
+  border-bottom: var(--primary-border);
   grid-template-columns: 1fr;
   height: auto;
 }
@@ -9,7 +9,7 @@
 #category-container ul {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--space-4);
   list-style: none;
   width: fit-content;
   padding: 0;
@@ -21,12 +21,16 @@
 #category-container li {
   display: grid;
   grid-template-columns: 1fr 50px 50px;
-  border-bottom: 1px solid #9e9e9e3b;
+  border-bottom: var(--primary-border);
 }
 
 #category-container .delete-icon {
-  color: var(--expense-color);
+  color: var(--negative-color);
   cursor: pointer;
+}
+
+#category-container .delete-icon:hover {
+  color: var(--negative-hover);
 }
 
 #category-container .edit-icon {
@@ -37,34 +41,33 @@
 #add-category {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  font-size: 1em;
+  gap: var(--space-4);
+  font-size: var(--button);
   grid-column: auto;
 }
 
 #add-category input {
-  padding: 10px;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: var(--space-2);
+  border: var(--primary-border);
+  border-radius: var(--space-2);
 }
 
 #add-category button {
-  padding: 10px;
-  border-radius: 10px;
+  padding: var(--space-3);
+  border-radius: var(--space-3);
 }
 
 #add-category select {
-  padding: 0.5em;
+  padding: var(--space-2);
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: var(--primary-border);
   outline: none;
 }
 
 .edit-input {
-  padding: 5px;
-  border-radius: 5px;
-  border: 2px solid #000000;
+  padding: var(--space-1);
+  border-radius: var(--space-1);
+  border: var(--primary-border);
   grid-column: span 2;
 }
 
@@ -75,6 +78,6 @@
 
 .categories {
   width: 100%;
-  border-top: 1px solid #9e9e9e3b;
-  padding: 1em;
+  border-top: var(--primary-border);
+  padding: var(--space-4);
 }

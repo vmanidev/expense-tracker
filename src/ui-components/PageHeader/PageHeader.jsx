@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./pageHeader.css";
 
 export default function PageHeader() {
-  const [theme, setTheme] = useState("dark_mode");
-  const toggleMode = () => {
-    setTheme((prev) => (prev === "light_mode" ? "dark_mode" : "light_mode"));
-  };
+  const [mode, setMode] = useState("light_mode");
+
+  useEffect(() => {
+    if (mode === "dark_mode") document.body.classList.add("dark_mode");
+    else document.body.classList.remove("dark_mode");
+  }, [mode]);
 
   return (
     <div id="header-wrapper">
       <span id="page-title">Expense Tracker</span>
       <span
-        id="settings-icon"
+        id="toggle-icon"
         className="material-icons material-symbols-outlined"
-        onClick={toggleMode}
+        onClick={(e) =>
+          setMode((prev) =>
+            prev === "light_mode" ? "dark_mode" : "light_mode"
+          )
+        }
       >
-        {theme}
+        {mode === "light_mode" ? "dark_mode" : "light_mode"}
       </span>
     </div>
   );
