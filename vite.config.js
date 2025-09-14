@@ -12,7 +12,7 @@ export default defineConfig({
         name: 'Expense Tracker',
         short_name: 'Expense Tracker',
         description: 'Expense Tracker helps you to track your income and expenses, manage categories.',
-        theme_color: '#000000',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         icons: [
