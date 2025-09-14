@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./pageHeader.css";
+import { useNavigate } from "react-router-dom";
 
 export default function PageHeader() {
   const [mode, setMode] = useState("light_mode");
@@ -10,9 +11,13 @@ export default function PageHeader() {
     else document.body.classList.remove("dark_mode");
   }, [mode]);
 
+  const navigate = useNavigate();
+
   return (
     <div id="header-wrapper">
-      <span id="page-title">Expense Tracker</span>
+      <span id="page-title" onClick={(e) => navigate("/")}>
+        Expense Tracker
+      </span>
       <span
         id="toggle-icon"
         className="material-icons material-symbols-outlined"

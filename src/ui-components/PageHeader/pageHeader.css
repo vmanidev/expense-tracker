@@ -8,6 +8,8 @@
   font-family: "Libertinus Keyboard", system-ui;
   font-weight: var(--font-regular);
   font-size: var(--headline);
+  user-select: none;
+  cursor: pointer;
 }
 
 #toggle-icon {
