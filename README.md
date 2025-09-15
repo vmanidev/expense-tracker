@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://expense-tracker-iota-ashy.vercel.app/)
 
-A modern, open-source **Expense Tracker** app built with **React**. Track your income and expenses, manage categories, and install it as a **Progressive Web App (PWA)**.
+A modern, open-source Expense Tracker app built with **React** and **PWA** support. Track your income and expenses, manage categories, and install it as an app for offline use.
 
 [🌐 Live Demo](https://expense-tracker-iota-ashy.vercel.app/)
 
