@@ -11,7 +11,7 @@ export default defineConfig({
       manifest: {
         name: 'Expense Tracker',
         short_name: 'Expense Tracker',
-        description: 'Expense Tracker helps you to track your income and expenses, manage categories.',
+        description: 'Track your income and expenses, manage categories, and install it as an app for offline use.',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
