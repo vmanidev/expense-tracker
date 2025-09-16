@@ -25,6 +25,10 @@
     justify-self: start;
   }
 
+  #transactionList-main-container ul li span:is(:nth-child(4), :nth-child(5)) {
+    font-size: var(--body-1);
+  }
+
   #category-container {
     grid-template-columns: repeat(4, 1fr);
     height: 400px;
