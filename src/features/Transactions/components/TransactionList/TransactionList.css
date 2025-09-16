@@ -37,6 +37,10 @@
   justify-self: end;
 }
 
+#transactionList-main-container ul li span:is(:nth-child(4), :nth-child(5)) {
+  font-size: var(--body-3);
+}
+
 #add-btn {
   display: flex;
   align-items: center;
